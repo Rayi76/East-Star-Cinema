@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.theater.controller.LoginController"
+      alignment="CENTER" spacing="16"
+      stylesheets="@css/style.css">
+    <padding>
+        <Insets top="24" right="24" bottom="24" left="24"/>
+    </padding>
+
+    <Label text="Theater 電影院訂票系統" styleClass="title"/>
+
+    <TabPane prefWidth="520" prefHeight="320">
+        <Tab text="會員登入" closable="false">
+            <VBox spacing="12" alignment="CENTER">
+                <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                <TextField fx:id="userUsernameInput" promptText="會員帳號" prefWidth="280"/>
+                <PasswordField fx:id="userPasswordInput" promptText="密碼" prefWidth="280"/>
+                <Label fx:id="userErrorLabel" styleClass="error" visible="false"/>
+                <HBox spacing="12" alignment="CENTER">
+                    <Button text="登入" onAction="#userLoginAction" defaultButton="true"/>
+                    <Button text="註冊新帳號" onAction="#goToRegisterAction"/>
+                </HBox>
+            </VBox>
+        </Tab>
+        <Tab text="管理員登入" closable="false">
+            <VBox spacing="12" alignment="CENTER">
+                <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                <TextField fx:id="adminUsernameInput" promptText="管理員帳號" prefWidth="280"/>
+                <PasswordField fx:id="adminPasswordInput" promptText="密碼" prefWidth="280"/>
+                <Label fx:id="adminErrorLabel" styleClass="error" visible="false"/>
+                <Button text="登入" onAction="#adminLoginAction"/>
+            </VBox>
+        </Tab>
+    </TabPane>
+</VBox>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.theater.controller.AdminDashboardController"
+            stylesheets="@css/style.css">
+    <top>
+        <VBox spacing="8">
+            <padding><Insets top="16" right="16" bottom="8" left="16"/></padding>
+            <Label text="Theater 管理後台" styleClass="title"/>
+            <Label fx:id="statusLabel"/>
+        </VBox>
+    </top>
+    <center>
+        <HBox spacing="16">
+            <padding><Insets top="8" right="16" bottom="8" left="16"/></padding>
+            <VBox spacing="8" prefWidth="200">
+                <Label text="新增電影"/>
+                <TextField fx:id="movieNameInput" promptText="電影名稱"/>
+                <TextArea fx:id="movieInfoInput" promptText="電影介紹" prefRowCount="3"/>
+                <ComboBox fx:id="movieStatusCombo" prefWidth="180"/>
+                <Button text="新增電影" onAction="#addMovieAction"/>
+                <Separator/>
+                <Label text="電影列表"/>
+                <ListView fx:id="movieListView" prefHeight="120"/>
+            </VBox>
+            <VBox spacing="8" prefWidth="220">
+                <Label text="新增場次"/>
+                <ComboBox fx:id="sessionMovieCombo" promptText="選擇電影" prefWidth="200"/>
+                <ComboBox fx:id="cinemaCombo" promptText="選擇影院" prefWidth="200"/>
+                <ComboBox fx:id="auditoriumCombo" promptText="選擇影廳" prefWidth="200"/>
+                <DatePicker fx:id="sessionDatePicker"/>
+                <TextField fx:id="sessionHourInput" promptText="場次小時 (0-23)"/>
+                <Button text="新增場次" onAction="#addSessionAction"/>
+            </VBox>
+            <VBox spacing="8" prefWidth="200">
+                <Label text="新增周邊商品"/>
+                <ComboBox fx:id="productMovieCombo" promptText="關聯電影" prefWidth="180"/>
+                <TextField fx:id="productNameInput" promptText="商品名稱"/>
+                <TextField fx:id="productPriceInput" promptText="定價"/>
+                <TextField fx:id="productAmountInput" promptText="庫存數量"/>
+                <Button text="新增商品" onAction="#addProductAction"/>
+            </VBox>
+        </HBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER">
+            <padding><Insets top="8" right="16" bottom="16" left="16"/></padding>
+            <Button text="登出" onAction="#logoutAction"/>
+        </HBox>
+    </bottom>
+</BorderPane>

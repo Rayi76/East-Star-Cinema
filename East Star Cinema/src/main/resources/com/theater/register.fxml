@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.theater.controller.RegisterController"
+      alignment="CENTER" spacing="16"
+      stylesheets="@css/style.css">
+    <padding>
+        <Insets top="24" right="24" bottom="24" left="24"/>
+    </padding>
+
+    <Label text="註冊新會員" styleClass="title"/>
+    <TextField fx:id="usernameInput" promptText="帳號" prefWidth="280"/>
+    <PasswordField fx:id="passwordInput" promptText="密碼" prefWidth="280"/>
+    <PasswordField fx:id="confirmPasswordInput" promptText="確認密碼" prefWidth="280"/>
+    <Label fx:id="messageLabel" styleClass="error" visible="false"/>
+    <HBox spacing="12" alignment="CENTER">
+        <Button text="註冊" onAction="#registerAction"/>
+        <Button text="返回登入" onAction="#backToLoginAction"/>
+    </HBox>
+</VBox>

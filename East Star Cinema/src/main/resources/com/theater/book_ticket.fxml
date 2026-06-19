@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.theater.controller.BookTicketController"
+      spacing="12"
+      stylesheets="@css/style.css">
+    <padding>
+        <Insets top="16" right="16" bottom="16" left="16"/>
+    </padding>
+
+    <Label fx:id="movieLabel" styleClass="title"/>
+    <HBox spacing="12">
+        <ComboBox fx:id="cinemaCombo" promptText="選擇影院" prefWidth="180"/>
+        <ComboBox fx:id="sessionCombo" promptText="選擇場次" prefWidth="220"/>
+        <ComboBox fx:id="ticketTypeCombo" promptText="票種" prefWidth="120"/>
+    </HBox>
+    <Label text="選擇座位"/>
+    <ScrollPane prefHeight="280" fitToWidth="true">
+        <GridPane fx:id="seatGrid" hgap="4" vgap="4"/>
+    </ScrollPane>
+    <HBox spacing="12" alignment="CENTER_LEFT">
+        <Label fx:id="priceLabel"/>
+        <Label fx:id="statusLabel"/>
+    </HBox>
+    <HBox spacing="12" alignment="CENTER">
+        <Button text="確認訂票" onAction="#confirmBookingAction"/>
+        <Button text="返回" onAction="#backAction"/>
+    </HBox>
+</VBox>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.theater.controller.UserDashboardController"
+            stylesheets="@css/style.css">
+    <top>
+        <VBox spacing="8">
+            <padding><Insets top="16" right="16" bottom="8" left="16"/></padding>
+            <Label fx:id="welcomeLabel" styleClass="title"/>
+            <Label fx:id="memberInfoLabel"/>
+        </VBox>
+    </top>
+    <center>
+        <HBox spacing="16">
+            <padding><Insets top="8" right="16" bottom="8" left="16"/></padding>
+            <VBox spacing="8" prefWidth="220">
+                <Label text="上映中電影"/>
+                <ListView fx:id="movieListView" prefHeight="220"/>
+                <Button text="訂票" onAction="#bookTicketAction"/>
+                <Button text="查看周邊商品" onAction="#loadProductsAction"/>
+            </VBox>
+            <VBox spacing="8" prefWidth="220">
+                <Label text="我的訂單"/>
+                <ListView fx:id="orderListView" prefHeight="220"/>
+                <Button text="取消訂單" onAction="#cancelOrderAction"/>
+            </VBox>
+            <VBox spacing="8" prefWidth="220">
+                <Label text="周邊商品"/>
+                <ListView fx:id="productListView" prefHeight="220"/>
+                <Button text="購買商品" onAction="#buyProductAction"/>
+            </VBox>
+        </HBox>
+    </center>
+    <bottom>
+        <HBox spacing="12" alignment="CENTER">
+            <padding><Insets top="8" right="16" bottom="16" left="16"/></padding>
+            <Label fx:id="statusLabel"/>
+            <Button text="登出" onAction="#logoutAction"/>
+        </HBox>
+    </bottom>
+</BorderPane>
